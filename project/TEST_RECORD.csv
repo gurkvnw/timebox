@@ -1,11 +1,11 @@
 test,expected_result,status,evidence
 Upload,Arduino IDE shows Done uploading,Reported pass,Student message
 LCD,Readable calibration and timer text,Reported pass,Student reported Hold key for + after initial lines
-Keypad,Two learned buttons change the selected preset,Reported pass,Student reported all functions except buzzer work
-START,Yellow button begins the countdown,Reported pass,Student reported all functions except buzzer work
-Countdown,30-second bench cycle reaches the end,Reported pass,Student reported all functions except buzzer work
-Servo,Servo moves at the start and returns at the end,Reported pass,Student reported all functions except buzzer work
-Buzzer,Audible signal at the end,Reported fail,Student reported no buzzer sound
+Keypad,Two learned buttons change the selected preset,Reported pass,Student reported successful bench operation
+START,Yellow button begins the countdown,Reported pass,Student reported successful bench operation
+Countdown,30-second bench cycle reaches the end,Reported pass,Student reported successful bench operation
+Servo,Servo moves at the start and returns at the end,Reported pass,Student reported successful bench operation
+Buzzer,Audible signal at the end,Reported pass,Student confirmed the buzzer works in the latest bench update
 Mechanical latch,Closed box remains locked during the cycle,Not tested,No completed box test provided
 Power supply,Actual module ratings and available current confirmed,Pending,Exact servo model not recorded
 Long duration,One-hour and four-hour runs complete correctly,Not tested,No result provided

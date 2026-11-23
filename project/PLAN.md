@@ -19,18 +19,18 @@ TimeBox: a timed lockbox controlled by an Arduino Uno.
 - Removal of the lid sensor from the physical design.
 - A single-file Arduino sketch with keypad calibration.
 - Student-reported successful upload, LCD operation, countdown, button input, and servo movement.
+- Buzzer operation confirmed by the student in the latest bench update.
 
 ## Next work
 
-1. Diagnose the silent buzzer: check G/V/S connections, D8, module type, and an isolated sound test.
 2. Record exact part models and confirm the servo supply with the instructor.
-3. Fit the servo and a latch to a box; adjust the two angles.
-4. Test repeated cycles, movement under load, and longer presets.
-5. Add verified photos, results, and a short demo to the report.
+2. Fit the servo and a latch to a box; adjust the two angles.
+3. Test repeated cycles, movement under load, and longer presets.
+4. Add a short demo of the completed enclosure and update the report with the remaining test results.
 
 ## What is needed
 
-The existing bench components, Arduino IDE, a USB data cable, a box, suitable mounting materials, and help confirming the servo supply and buzzer module.
+The existing bench components, Arduino IDE, a USB data cable, a box, suitable mounting materials, and help confirming the servo supply.
 
 ## Risks and limits
 

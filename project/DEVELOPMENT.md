@@ -54,7 +54,7 @@ At first, the physical LCD showed only lines. After checking and reconnecting th
 
 ## 7. Test the physical prototype
 
-I selected the 30-second preset and used the yellow START button. In the bench test, the display, keypad, countdown, START button, and servo worked. The buzzer did not make a sound, so this part remains unfinished. I have not recorded a successful buzzer retest.
+I selected the 30-second preset and used the yellow START button. In the bench test, the display, keypad, countdown, START button, and servo worked. The buzzer has also been confirmed working in the latest bench update.
 
 ## 8. Latest physical state
 
@@ -62,7 +62,7 @@ The photograph below is the latest bench assembly. It shows the Uno connected by
 
 ![Latest TimeBox bench prototype with the LCD showing a two-hour setting](../docs/assets/final-bench-prototype.jpg)
 
-The physical work currently ends at this bench prototype. A separate box, servo-operated latch, tests under mechanical load, and a working buzzer are the next tasks. The current program also clears the countdown after reset or power loss.
+The physical work currently ends at this bench prototype. A separate box, servo-operated latch, and tests under mechanical load are the next tasks. The current program also clears the countdown after reset or power loss.
 
 ## Changes from the simulation
 
@@ -72,5 +72,5 @@ The physical work currently ends at this bench prototype. A separate box, servo-
 | Lid switch input | Removed following laboratory advice |
 | Simulation output | Real LCD, wiring, and servo movement |
 | Old LockController.h dependency | One Arduino sketch without that extra file |
-| Planned sound alert | Buzzer remains an open hardware test |
+| Planned sound alert | Physical buzzer confirmed working |
 

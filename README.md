@@ -4,7 +4,7 @@ An Arduino Uno timed lockbox prototype. The user chooses a waiting time, closes 
 
 **Student:** Sina Gurkan Hosdag · **Group:** 4250Z
 
-**Current stage:** Bench prototype. The student reported that the screen, keypad, countdown, START button, and servo work. The buzzer did not sound and still needs testing. The physical box and latch have not been verified.
+**Current stage:** Bench prototype. The screen, keypad, countdown, START button, servo, and buzzer are reported working on the bench prototype. The physical box and latch have not been verified.
 
 ## Project files
 
@@ -50,7 +50,7 @@ The sketch uses only `Wire.h`, `LiquidCrystal_I2C.h`, and `Servo.h`. It does not
 4. Use those two buttons to choose a preset. The default is one hour.
 5. For a bench test, press minus three times to select **30 seconds**. Keep the lid open for the first servo test.
 6. Press the yellow START button. The LCD shows the remaining time. The selected duration cannot be changed during the countdown.
-7. At the end, the LCD shows **TIME IS UP / UNLOCKED** and the sketch commands the servo to return. The code also sends a short buzzer signal; the sound has not been confirmed on the hardware.
+7. At the end, the LCD shows **TIME IS UP / UNLOCKED** and the sketch commands the servo to return. The buzzer gives an audible signal when the countdown ends.
 
 Available presets: 30 seconds, 15 minutes, 30 minutes, 1 hour, 90 minutes, 2 hours, and 4 hours. Keypad calibration runs again after each restart. Serial Monitor uses 115200 baud; sending `c` starts keypad calibration again when the countdown is not running.
 
@@ -94,7 +94,7 @@ I collected the GND and supply connections on the breadboard, then connected the
 
 ### Program upload and bench test
 
-I replaced the separate PLUS and MINUS buttons with the analog keypad at A0 and removed the reed switch. I installed the missing LCD library and used a single-file sketch to remove the old LockController.h dependency. After checking the LCD signal connections, the screen displayed the keypad setup prompt. I calibrated two keys and tested a 30-second countdown. The display, buttons, timer, and servo worked; the buzzer did not sound.
+I replaced the separate PLUS and MINUS buttons with the analog keypad at A0 and removed the reed switch. I installed the missing LCD library and used a single-file sketch to remove the old LockController.h dependency. After checking the LCD signal connections, the screen displayed the keypad setup prompt. I calibrated two keys and tested a 30-second countdown. The display, buttons, timer, and servo worked. The buzzer has also been confirmed working in the latest bench update.
 
 ### Latest physical state
 
@@ -109,7 +109,6 @@ See the [full development process](project/DEVELOPMENT.md) for the build steps a
 - Reset or power loss clears the countdown and the startup code commands the unlock position. This is not a secure lock.
 - Without a lid sensor, the system cannot confirm that the lid is closed.
 - The screen reports commanded lock states; it cannot measure the actual latch position.
-- The buzzer failed the reported bench test. The original 250 ms HIGH signal is preserved for diagnosis.
 - A completed box, latch strength, loaded servo movement, and long-duration runs have not been tested.
 - The repository sketch is the saved version that was supplied for the bench test. Later local edits, such as a longer beep, have not been confirmed or included.
 
