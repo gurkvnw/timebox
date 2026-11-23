@@ -9,7 +9,8 @@ An Arduino Uno timed lockbox prototype. The user chooses a waiting time, closes 
 ## Project files
 
 - [Arduino sketch](firmware/TimeBox_Arduino/TimeBox_Arduino.ino)
-- [Project report](docs/index.html) — publish this folder with GitHub Pages to read the report as a website.
+- [Project report on GitHub Pages](https://gurkvnw.github.io/timebox/)
+- [Development process and build photographs](project/DEVELOPMENT.md)
 - [Connections](project/CONNECTIONS.md)
 - [Test record](project/TEST_RECORD.csv)
 - [Development plan](project/PLAN.md)
@@ -72,6 +73,36 @@ The classroom wiring was changed on the instructor's direction: LCD VCC uses 5V;
 The sketch first learns the analog values of the released keypad and the two selected buttons. It waits for stable readings to avoid repeated presses caused by button bounce. A new START press records `millis()` and sends a servo position command. The main loop compares elapsed time with the preset without blocking the countdown. At the end, it sends an unlock command and a buzzer signal.
 
 Servo angles are `UNLOCK_ANGLE = 15` and `LOCK_ANGLE = 85`. They are initial bench settings and must be adjusted to the actual latch. The code checks LCD addresses `0x27` and `0x3F`.
+
+## Development process and photographs
+
+### First design in Wokwi
+
+I tested the initial idea in Wokwi with an Uno, LCD, servo, buzzer, and separate adjustment buttons. The screenshot shows an active countdown. A simulated lid input was included at this stage and was later removed from the physical design.
+
+![Original Wokwi countdown simulation](docs/assets/wokwi-simulation.png)
+
+### Early physical assembly
+
+I selected the required modules from the laboratory panel and prepared the breadboard. The panel contains other sensors that are not used by TimeBox.
+
+![Early laboratory component setup](docs/assets/initial-lab-assembly.jpg)
+
+I collected the GND and supply connections on the breadboard, then connected the LCD and Arduino with help from the instructor. The image below shows an intermediate assembly, before the final circuit was completed.
+
+![LCD and Arduino connections during assembly](docs/assets/arduino-wiring-stage.jpg)
+
+### Program upload and bench test
+
+I replaced the separate PLUS and MINUS buttons with the analog keypad at A0 and removed the reed switch. I installed the missing LCD library and used a single-file sketch to remove the old LockController.h dependency. After checking the LCD signal connections, the screen displayed the keypad setup prompt. I calibrated two keys and tested a 30-second countdown. The display, buttons, timer, and servo worked; the buzzer did not sound.
+
+### Latest physical state
+
+![Latest physical TimeBox bench prototype](docs/assets/final-bench-prototype.jpg)
+
+The LCD shows `SET 02:00:00` and `CLOSE LID: START`. This records a selected preset, not a completed two-hour test. The box and mechanical latch still need to be built and tested.
+
+See the [full development process](project/DEVELOPMENT.md) for the build steps and changes from the simulation.
 
 ## Known limits
 
