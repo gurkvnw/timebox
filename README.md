@@ -13,7 +13,6 @@ An Arduino Uno timed lockbox prototype. The user chooses a waiting time, closes 
 - [Connections](project/CONNECTIONS.md)
 - [Test record](project/TEST_RECORD.csv)
 - [Development plan](project/PLAN.md)
-- [GitHub setup in Turkish](GITHUB_SETUP_TR.md)
 
 ## Goal
 
